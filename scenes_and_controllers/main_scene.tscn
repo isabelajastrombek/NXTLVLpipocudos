@@ -6,6 +6,7 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="ClickableSprite" parent="." instance=ExtResource("1_rviqr")]
+dialogues = Array[String](["Oiii sou um objeto", "Teste"])
 
 [node name="Player" parent="." instance=ExtResource("1_q3mt0")]
 position = Vector2(578, 311)
