@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgvb0aia0gvft"]
+
+[ext_resource type="Texture2D" uid="uid://ddwqnn3eorhq3" path="res://icon.svg" id="1_wdn8b"]
+[ext_resource type="Script" path="res://scenes_and_controllers/personagem_controller.gd" id="2_ggblw"]
+
+[node name="Personagem" type="Sprite2D"]
+texture = ExtResource("1_wdn8b")
+script = ExtResource("2_ggblw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0.145098, 1)
+position = Vector2(-105, 110)
+rotation = 1.60521
+scale = Vector2(0.65625, 0.609375)
+texture = ExtResource("1_wdn8b")

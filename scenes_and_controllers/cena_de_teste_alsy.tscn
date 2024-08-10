@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bupdxfrdcllb"]
+
+[ext_resource type="PackedScene" uid="uid://bgvb0aia0gvft" path="res://scenes_and_controllers/personagem.tscn" id="1_m8pwi"]
+[ext_resource type="Texture2D" uid="uid://monna4g8yc8m" path="res://couveflorw (1).png" id="2_hrrph"]
+
+[node name="CenaDeTesteAlsy" type="Node2D"]
+
+[node name="BackgroundCouve" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.247059)
+position = Vector2(543, 296)
+texture = ExtResource("2_hrrph")
+
+[node name="Personagem" parent="." instance=ExtResource("1_m8pwi")]
+position = Vector2(328, 184)

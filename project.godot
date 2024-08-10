@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="jogo_do_pato"
+run/main_scene="res://scenes_and_controllers/cena_de_teste_alsy.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
