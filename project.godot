@@ -14,6 +14,18 @@ config/name="jogo_do_pato"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
-[rendering]
+[file_customization]
 
-renderer/rendering_method="mobile"
+folder_colors={
+"res://audio/": "red",
+"res://data/": "orange",
+"res://managers/": "yellow",
+"res://models/": "green",
+"res://packages/": "teal",
+"res://scenes_and_controllers/": "blue",
+"res://script_templates/": "purple",
+"res://shaders/": "pink",
+"res://sprites/": "red",
+"res://utility/": "yellow",
+"res://views/": "green"
+}
