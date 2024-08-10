@@ -9,4 +9,4 @@
 dialogues = Array[String](["Oiii cliquei em um objeto", "Que maneiro"])
 
 [node name="Player" parent="." instance=ExtResource("1_q3mt0")]
-position = Vector2(578, 311)
+position = Vector2(334, 180)
