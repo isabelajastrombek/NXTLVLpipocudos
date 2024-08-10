@@ -3,8 +3,6 @@ extends Control
 @onready var item_list = %ItemList
 var current_tasks_discovered = 0 #id for list of tasks
 
-var chaos_limpos = 0
-var sujeiras = 3
 # nome da task, quantos já realizados, quantos precisa realizar, ordem na lista, se ja foi "descoberto"
 var tasks = [{"task": "Varrer o chão", "doing": 0, "to_do": 4, "id": -1, "not_discovered" : true}, {"task": "Recolher lixo", "doing": 0, "to_do": 6, "id": -1, "not_discovered" : true}, {"task": "Lavar louça", "doing": 0, "to_do": 3, "id": -1, "not_discovered" : true}]
 
