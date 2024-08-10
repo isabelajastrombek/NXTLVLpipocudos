@@ -43,7 +43,7 @@ func _physics_process(_delta):
 #region Private functions
 func _area_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event.is_action_pressed("click_left"):
-		print("Object clicked!")
+		pass
 
 func _area_mouse_entered():
 	material = outline_shader_material
