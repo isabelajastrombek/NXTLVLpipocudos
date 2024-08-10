@@ -16,7 +16,17 @@ outline_shader_material = ExtResource("3_8um7p")
 
 [node name="ClickableArea" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea"]
+[node name="AreaCollision" type="CollisionShape2D" parent="ClickableArea"]
+unique_name_in_owner = true
+shape = SubResource("CapsuleShape2D_4hlv0")
+debug_color = Color(0.969796, 0, 0.458994, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="StaticBodyCollision" type="CollisionShape2D" parent="StaticBody2D"]
+unique_name_in_owner = true
 shape = SubResource("CapsuleShape2D_4hlv0")
 debug_color = Color(0.969796, 0, 0.458994, 0.42)

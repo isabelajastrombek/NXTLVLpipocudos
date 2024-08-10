@@ -27,9 +27,11 @@ func _enter_tree():
 	pass
 	
 func _ready():
+	# Setup area events
 	clickable_area.input_event.connect(_area_input_event)
 	clickable_area.mouse_entered.connect(_area_mouse_entered)
 	clickable_area.mouse_exited.connect(_area_mouse_exited)
+	_setup_shape_2d()
 	
 func _process(_delta):
 	pass
@@ -51,6 +53,14 @@ func _area_mouse_entered():
 	
 func _area_mouse_exited():
 	material = null
+	
+func _setup_shape_2d():
+	var texture_size := texture.get_size()
+	var capsule_shape := CapsuleShape2D.new()
+	capsule_shape.height = texture_size.y
+	capsule_shape.radius = texture_size.x/2
+	%AreaCollision.shape = capsule_shape
+	%StaticBodyCollision.shape = capsule_shape
 #endregion
 
 #region Subclasses

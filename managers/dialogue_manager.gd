@@ -58,6 +58,8 @@ func start_dialogue(lines: Array[String], follow_player := true, origin := Vecto
 	if is_dialogue_active:
 		print("Another dialogue is active!")
 		return
+	if !lines or lines.size() == 0:
+		return
 	
 	dialogue_lines = lines
 	line_index = 0
