@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmkej5e08m2ei"]
+
+[ext_resource type="Texture2D" uid="uid://ddwqnn3eorhq3" path="res://icon.svg" id="1_2vy0q"]
+[ext_resource type="Script" path="res://scenes_and_controllers/clickable_controller.gd" id="2_r6kd4"]
+[ext_resource type="Material" uid="uid://d2fgtkx5dwl74" path="res://shaders/2d_outline.tres" id="3_8um7p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4hlv0"]
+radius = 60.0
+height = 128.0
+
+[node name="ClickableSprite" type="Sprite2D"]
+position = Vector2(578, 311)
+texture = ExtResource("1_2vy0q")
+script = ExtResource("2_r6kd4")
+outline_shader_material = ExtResource("3_8um7p")
+
+[node name="ClickableArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea"]
+shape = SubResource("CapsuleShape2D_4hlv0")
+debug_color = Color(0.969796, 0, 0.458994, 0.42)
