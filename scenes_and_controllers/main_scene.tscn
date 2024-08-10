@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://da1ocvhlqhrj6"]
+
+[ext_resource type="PackedScene" uid="uid://dlbw5vhwoj4gq" path="res://scenes_and_controllers/player.tscn" id="1_q3mt0"]
+[ext_resource type="PackedScene" uid="uid://bmkej5e08m2ei" path="res://scenes_and_controllers/clickable_sprite.tscn" id="1_rviqr"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_q3mt0")]
+position = Vector2(578, 311)
+
+[node name="ClickableSprite" parent="." instance=ExtResource("1_rviqr")]
