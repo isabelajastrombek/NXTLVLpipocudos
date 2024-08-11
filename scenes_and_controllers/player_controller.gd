@@ -5,6 +5,12 @@ var speed = 300
 var click_position = Vector2()
 var target_position = Vector2()
 
+signal moved(to : Vector2)
+
+func force_set_position(new_pos: Vector2):
+	position = new_pos
+	target_position = new_pos
+
 func _ready():
 	click_position = position
 	DialogueManager.set_player_controller(self)
@@ -19,3 +25,4 @@ func _move_to_target():
 		target_position = (click_position - position).normalized()
 		velocity = target_position * speed
 		move_and_slide() 
+		moved.emit(target_position)

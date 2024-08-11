@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6e1fogded7x6"]
+
+[ext_resource type="Script" path="res://scenes_and_controllers/screen_controller.gd" id="1_k4yuw"]
+[ext_resource type="PackedScene" uid="uid://bmkej5e08m2ei" path="res://scenes_and_controllers/clickable_sprite.tscn" id="1_t3nw3"]
+[ext_resource type="Script" path="res://models/item.gd" id="2_tsdj8"]
+[ext_resource type="Texture2D" uid="uid://ddwqnn3eorhq3" path="res://icon.svg" id="3_vf7sa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g13p"]
+size = Vector2(85.5, 335)
+
+[sub_resource type="Resource" id="Resource_esawm"]
+script = ExtResource("2_tsdj8")
+key = "item-teste"
+name = "Item"
+description = "Eu sou um item!"
+texture = ExtResource("3_vf7sa")
+
+[node name="ExampleScreen" type="Node2D"]
+script = ExtResource("1_k4yuw")
+
+[node name="ChangeScreenAreas" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="ExampleScreen" type="Area2D" parent="ChangeScreenAreas"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeScreenAreas/ExampleScreen"]
+position = Vector2(1075, 355)
+shape = SubResource("RectangleShape2D_1g13p")
+
+[node name="ClickableSprite" parent="." instance=ExtResource("1_t3nw3")]
+item = SubResource("Resource_esawm")
