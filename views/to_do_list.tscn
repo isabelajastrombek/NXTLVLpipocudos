@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dakakgyr7ydfa"]
+
+[ext_resource type="Script" path="res://views/to_do_list_view.gd" id="1_e04ul"]
+
+[node name="To Do List" type="MarginContainer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_e04ul")
+
+[node name="ItemList" type="ItemList" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25

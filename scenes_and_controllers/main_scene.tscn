@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://da1ocvhlqhrj6"]
+[gd_scene load_steps=6 format=3 uid="uid://da1ocvhlqhrj6"]
 
 [ext_resource type="PackedScene" uid="uid://dlbw5vhwoj4gq" path="res://scenes_and_controllers/player.tscn" id="1_q3mt0"]
 [ext_resource type="Script" path="res://scenes_and_controllers/main_scene_controller.gd" id="1_rrb5v"]
 [ext_resource type="PackedScene" uid="uid://c6e1fogded7x6" path="res://scenes_and_controllers/screens/example_screen.tscn" id="2_s41xh"]
 [ext_resource type="PackedScene" uid="uid://dwxwhmy553y4p" path="res://views/inventory.tscn" id="3_al15w"]
+[ext_resource type="PackedScene" uid="uid://dakakgyr7ydfa" path="res://views/to_do_list.tscn" id="5_7nvcv"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_rrb5v")
@@ -32,3 +33,5 @@ editor_draw_limits = true
 [node name="Inventory" parent="UI" instance=ExtResource("3_al15w")]
 offset_right = 100.0
 offset_bottom = 100.0
+
+[node name="To Do List" parent="UI" instance=ExtResource("5_7nvcv")]
