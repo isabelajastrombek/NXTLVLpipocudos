@@ -19,4 +19,4 @@ func _physics_process(delta):
 		move_and_slide()
 		animation_player.play("player_walk")
 	else:
-		animation_player.stop(false)
+		animation_player.play("player_idle")
