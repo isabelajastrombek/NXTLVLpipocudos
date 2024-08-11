@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwxwhmy553y4p"]
+
+[ext_resource type="Script" path="res://views/inventory_view.gd" id="1_o3v7o"]
+[ext_resource type="PackedScene" uid="uid://bj1sjge4j228g" path="res://views/inventory_item.tscn" id="2_kyfhc"]
+
+[node name="Inventory" type="GridContainer"]
+offset_right = 20.0
+offset_bottom = 20.0
+columns = 3
+script = ExtResource("1_o3v7o")
+
+[node name="InventoryItem" parent="." instance=ExtResource("2_kyfhc")]
+layout_mode = 2

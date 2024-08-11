@@ -7,6 +7,7 @@ class_name ClickableController
 #region Parameters (consts and exportvars)
 @export var outline_shader_material : ShaderMaterial
 @export var dialogues : Array[String]
+@export var item : Item
 #endregion
 
 #region Signals
@@ -17,6 +18,8 @@ class_name ClickableController
 #endregion
 
 #region Computed properties
+var has_item : bool:
+	get: return item != null
 #endregion
 
 #region Event functions
@@ -46,7 +49,10 @@ func _physics_process(_delta):
 #region Private functions
 func _area_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event.is_action_pressed("click_left"):
-		DialogueManager.start_dialogue(dialogues)
+		if has_item:
+			GameManager.add_item(item)
+			queue_free()
+		else: DialogueManager.start_dialogue(dialogues)
 
 func _area_mouse_entered():
 	material = outline_shader_material

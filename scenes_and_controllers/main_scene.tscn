@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://da1ocvhlqhrj6"]
+[gd_scene load_steps=7 format=3 uid="uid://da1ocvhlqhrj6"]
 
 [ext_resource type="PackedScene" uid="uid://dlbw5vhwoj4gq" path="res://scenes_and_controllers/player.tscn" id="1_q3mt0"]
 [ext_resource type="PackedScene" uid="uid://bmkej5e08m2ei" path="res://scenes_and_controllers/clickable_sprite.tscn" id="1_rviqr"]
+[ext_resource type="Script" path="res://models/item.gd" id="2_g7lsv"]
+[ext_resource type="PackedScene" uid="uid://dwxwhmy553y4p" path="res://views/inventory.tscn" id="3_al15w"]
+[ext_resource type="Texture2D" uid="uid://ddwqnn3eorhq3" path="res://icon.svg" id="3_th0nr"]
+
+[sub_resource type="Resource" id="Resource_esawm"]
+script = ExtResource("2_g7lsv")
+key = "item-teste"
+name = "Item"
+description = "Eu sou um item!"
+texture = ExtResource("3_th0nr")
 
 [node name="MainScene" type="Node2D"]
 
 [node name="ClickableSprite" parent="." instance=ExtResource("1_rviqr")]
-dialogues = Array[String](["Oiii cliquei em um objeto", "Que maneiro"])
+item = SubResource("Resource_esawm")
 
 [node name="Player" parent="." instance=ExtResource("1_q3mt0")]
 position = Vector2(334, 180)
+
+[node name="Inventory" parent="." instance=ExtResource("3_al15w")]

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GameManager="*res://managers/game_manager.gd"
 DialogueManager="*res://managers/dialogue_manager.gd"
 
 [file_customization]
