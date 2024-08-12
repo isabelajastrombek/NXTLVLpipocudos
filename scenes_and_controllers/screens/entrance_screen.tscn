@@ -53,26 +53,22 @@ scale = Vector2(0.490826, 0.490826)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits"]
 position = Vector2(70.2898, -482.86)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_d4lch")
 debug_color = Color(0.998763, 0, 0.133279, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Limits"]
 position = Vector2(-1314.11, -16.299)
 rotation = 2.00886
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0s0ws")
 debug_color = Color(0.998763, 0, 0.133279, 0.42)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Limits"]
 position = Vector2(-81.9364, 387.103)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tck7j")
 debug_color = Color(0.998763, 0, 0.133279, 0.42)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Limits"]
 position = Vector2(1344.67, -73.3458)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rju7s")
 debug_color = Color(0.998763, 0, 0.133279, 0.42)
 

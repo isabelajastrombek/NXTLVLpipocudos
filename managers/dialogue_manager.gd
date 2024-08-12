@@ -44,7 +44,7 @@ func _physics_process(_delta):
 	pass
 
 func _input(event):
-	if event.is_action_pressed("click_right") and is_dialogue_active and can_advance_line:
+	if event.is_action_pressed("click_left") and is_dialogue_active and can_advance_line:
 		_advance_text()
 		
 #endregion
