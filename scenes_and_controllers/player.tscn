@@ -127,6 +127,7 @@ unique_name_in_owner = true
 rotation = -0.10472
 scale = Vector2(0.0841596, 0.0877973)
 texture = ExtResource("2_v43sd")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_018hk")

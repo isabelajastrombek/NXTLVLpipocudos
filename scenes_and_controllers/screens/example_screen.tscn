@@ -43,22 +43,22 @@ scale = Vector2(0.490826, 0.490826)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits"]
 position = Vector2(57, -482.86)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_g8s2l")
 debug_color = Color(0.998763, 0, 0.133279, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Limits"]
 position = Vector2(-1314.11, -16.299)
 rotation = 2.00886
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vwj13")
 debug_color = Color(0.998763, 0, 0.133279, 0.42)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Limits"]
 position = Vector2(-81.9364, 387.103)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r5i8q")
 debug_color = Color(0.998763, 0, 0.133279, 0.42)
 
-[node name="ClickableSprite" parent="." instance=ExtResource("1_t3nw3")]
+[node name="ClickableSprites" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="ClickableSprite" parent="ClickableSprites" instance=ExtResource("1_t3nw3")]
 item = SubResource("Resource_esawm")

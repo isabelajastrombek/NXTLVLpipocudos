@@ -1,17 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://ui6esxic7ek1"]
+[gd_scene load_steps=17 format=3 uid="uid://ui6esxic7ek1"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/screen_controller.gd" id="1_84blt"]
 [ext_resource type="Texture2D" uid="uid://dcxtwvu26y6ar" path="res://sprites/fundosimples3PORTA.png" id="2_14665"]
 [ext_resource type="PackedScene" uid="uid://bmkej5e08m2ei" path="res://scenes_and_controllers/clickable_sprite.tscn" id="2_hl11f"]
-[ext_resource type="Script" path="res://models/item.gd" id="3_3wgv3"]
-[ext_resource type="Texture2D" uid="uid://ddwqnn3eorhq3" path="res://icon.svg" id="4_kod2j"]
+[ext_resource type="Texture2D" uid="uid://dgmboaew4ccxm" path="res://sprites/planta.png" id="4_tlc1e"]
+[ext_resource type="Texture2D" uid="uid://b52wxsxf3m71r" path="res://sprites/balao1.png" id="5_5td6t"]
+[ext_resource type="Texture2D" uid="uid://b77dh28nmmh0r" path="res://sprites/quadroF.png" id="5_hr3sb"]
+[ext_resource type="Texture2D" uid="uid://bhgafenikl07a" path="res://sprites/balao2.png" id="6_jred2"]
 [ext_resource type="Texture2D" uid="uid://b8gn8s6cjrkke" path="res://sprites/tapete_azul.png" id="6_s8isp"]
+[ext_resource type="Texture2D" uid="uid://citn0pn5qc2i8" path="res://sprites/copo.png" id="7_iht4h"]
+[ext_resource type="Texture2D" uid="uid://cwp8ffo6ee6tc" path="res://sprites/confetti.png" id="8_3ycby"]
+[ext_resource type="Texture2D" uid="uid://b5sltek6y1kcj" path="res://sprites/balao4.png" id="9_m8nap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1g13p"]
 size = Vector2(85.5, 335)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4lch"]
-size = Vector2(2196.21, 248.561)
+size = Vector2(2222.78, 248.561)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0s0ws"]
 size = Vector2(959.334, 234.502)
@@ -19,16 +24,13 @@ size = Vector2(959.334, 234.502)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tck7j"]
 size = Vector2(2572.06, 234.502)
 
-[sub_resource type="Resource" id="Resource_esawm"]
-script = ExtResource("3_3wgv3")
-key = "item-teste"
-name = "Item"
-description = "Eu sou um item!"
-texture = ExtResource("4_kod2j")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rju7s"]
+size = Vector2(315.794, 1076.86)
 
 [node name="EntranceScreen" type="Node2D"]
 script = ExtResource("1_84blt")
 width = 1152
+enter_dialogue_lines = Array[String](["Meu deus! Que bagunça :o", "O que será que aconteceu quando eu estava fora???", "Tudo que eu queria era uma noite de descanso depois da minha viagem...", "Mas aparentemente vou ter que começar a arrumar isso aqui."])
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(0.576, 0.576)
@@ -42,7 +44,7 @@ unique_name_in_owner = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeScreenAreas/ExampleScreen"]
-position = Vector2(1075, 355)
+position = Vector2(1127, 488)
 shape = SubResource("RectangleShape2D_1g13p")
 
 [node name="Limits" type="StaticBody2D" parent="."]
@@ -50,7 +52,7 @@ position = Vector2(580, 515)
 scale = Vector2(0.490826, 0.490826)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits"]
-position = Vector2(57, -482.86)
+position = Vector2(70.2898, -482.86)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_d4lch")
 debug_color = Color(0.998763, 0, 0.133279, 0.42)
@@ -68,10 +70,158 @@ scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tck7j")
 debug_color = Color(0.998763, 0, 0.133279, 0.42)
 
-[node name="ClickableSprite" parent="." instance=ExtResource("2_hl11f")]
-item = SubResource("Resource_esawm")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Limits"]
+position = Vector2(1344.67, -73.3458)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rju7s")
+debug_color = Color(0.998763, 0, 0.133279, 0.42)
 
 [node name="TapeteAzul" type="Sprite2D" parent="."]
 position = Vector2(580, 515)
 scale = Vector2(0.490826, 0.490826)
 texture = ExtResource("6_s8isp")
+
+[node name="AAAAA" type="Sprite2D" parent="."]
+position = Vector2(210, 223)
+scale = Vector2(0.091, 0.091)
+texture = ExtResource("4_tlc1e")
+
+[node name="AAAAA2" type="Sprite2D" parent="."]
+position = Vector2(983, 175)
+scale = Vector2(0.135736, 0.135736)
+texture = ExtResource("5_hr3sb")
+
+[node name="ClickableSprites" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(580, 515)
+scale = Vector2(0.490826, 0.490826)
+
+[node name="ClickableSprite2" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(-802.729, 28.5233)
+scale = Vector2(0.122243, 0.122243)
+texture = ExtResource("5_5td6t")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite3" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(800.692, -128.355)
+scale = Vector2(0.122243, 0.122243)
+texture = ExtResource("5_5td6t")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite4" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(900.523, 69.271)
+scale = Vector2(0.122243, 0.122243)
+texture = ExtResource("5_5td6t")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite5" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(-401.364, 24.4487)
+scale = Vector2(0.122243, 0.122243)
+texture = ExtResource("6_jred2")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite6" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(700.86, 57.0468)
+scale = Vector2(0.122243, 0.122243)
+texture = ExtResource("6_jred2")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite7" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(582.692, -187.439)
+scale = Vector2(0.122243, 0.122243)
+texture = ExtResource("6_jred2")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite8" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(444.15, 16.2991)
+scale = Vector2(0.0814953, 0.0814953)
+texture = ExtResource("7_iht4h")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite9" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(-631.589, -169.103)
+scale = Vector2(0.0814953, 0.0814953)
+texture = ExtResource("7_iht4h")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite10" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(-222.075, 142.617)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("7_iht4h")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite11" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(252.635, -55.0094)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("8_3ycby")
+disappear_on_click = true
+
+[node name="ClickableSprite12" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(-134.467, -85.5701)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("8_3ycby")
+disappear_on_click = true
+
+[node name="ClickableSprite13" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(-645.85, -10.1869)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("8_3ycby")
+disappear_on_click = true
+
+[node name="ClickableSprite14" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(201.701, 122.243)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("8_3ycby")
+disappear_on_click = true
+
+[node name="ClickableSprite15" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(523.608, 148.729)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("8_3ycby")
+disappear_on_click = true
+
+[node name="ClickableSprite16" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(-986.093, 130.392)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("8_3ycby")
+disappear_on_click = true
+
+[node name="ClickableSprite17" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(-918.86, -185.402)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("9_m8nap")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite18" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(-22.4111, 169.103)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("9_m8nap")
+disappear_on_click = true
+has_collision = true
+
+[node name="ClickableSprite19" parent="ClickableSprites" instance=ExtResource("2_hl11f")]
+position = Vector2(623.439, -97.7944)
+rotation = 3.14159
+scale = Vector2(0.083704, -0.0797705)
+texture = ExtResource("9_m8nap")
+disappear_on_click = true
+has_collision = true

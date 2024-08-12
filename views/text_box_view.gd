@@ -9,7 +9,7 @@ const letter_time = 0.03
 const space_time_modifier = 2
 const punctuation_time_modifier = 6.5
 const max_width = 256
-const y_offset = -300
+const y_offset = -500
 
 #endregion
 

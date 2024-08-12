@@ -67,6 +67,7 @@ func _set_screen(index:int):
 	current_screen = screens[index] 
 	var screen_pos = current_screen.position
 	_change_camera_limits(screen_pos.x,screen_pos.x+current_screen.width)
+	DialogueManager.start_dialogue(current_screen.enter_dialogue_lines)
 	
 func _set_screen_with_name(name:String):
 	_set_screen(_find_screen_index(name))
