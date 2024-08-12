@@ -1,64 +1,22 @@
 [gd_scene load_steps=13 format=3 uid="uid://dlbw5vhwoj4gq"]
 
 [ext_resource type="Script" path="res://scenes_and_controllers/player_controller.gd" id="1_8oivm"]
-[ext_resource type="Texture2D" uid="uid://b4y8gqykt54uq" path="res://scenes_and_controllers/duck_walking_1.png" id="2_v43sd"]
-[ext_resource type="Texture2D" uid="uid://bcq1d6udab4qg" path="res://scenes_and_controllers/duck_walking_2.png" id="3_eg7yy"]
-[ext_resource type="Texture2D" uid="uid://cc5sdwxc3mv0i" path="res://scenes_and_controllers/duck_idle.png" id="4_25cy6"]
-[ext_resource type="Texture2D" uid="uid://dgjnwlu1x2fjt" path="res://scenes_and_controllers/duck_blinking.png" id="5_uto1o"]
-[ext_resource type="Texture2D" uid="uid://b1ymjfpj308cw" path="res://scenes_and_controllers/duck_tail_1.png" id="6_5tucg"]
-[ext_resource type="Texture2D" uid="uid://bwcvtwmc28lsu" path="res://scenes_and_controllers/duck_tail_2.png" id="7_dblqd"]
+[ext_resource type="Texture2D" uid="uid://b4y8gqykt54uq" path="res://sprites/duck/duck_walking_1.png" id="2_v43sd"]
+[ext_resource type="Texture2D" uid="uid://bcq1d6udab4qg" path="res://sprites/duck/duck_walking_2.png" id="3_eg7yy"]
+[ext_resource type="Texture2D" uid="uid://cc5sdwxc3mv0i" path="res://sprites/duck/duck_idle.png" id="4_25cy6"]
+[ext_resource type="Texture2D" uid="uid://dgjnwlu1x2fjt" path="res://sprites/duck/duck_blinking.png" id="5_uto1o"]
+[ext_resource type="Texture2D" uid="uid://b1ymjfpj308cw" path="res://sprites/duck/duck_tail_1.png" id="6_5tucg"]
+[ext_resource type="Texture2D" uid="uid://bwcvtwmc28lsu" path="res://sprites/duck/duck_tail_2.png" id="7_dblqd"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3ywy"]
-radius = 81.0
-height = 180.0
-
-[sub_resource type="Animation" id="Animation_td7dc"]
-resource_name = "player_walk"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_v43sd"), ExtResource("3_eg7yy"), ExtResource("2_v43sd"), ExtResource("3_eg7yy"), ExtResource("2_v43sd")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [-0.10472, 0.10472, -0.10472, 0.10472, -0.10472]
-}
+[sub_resource type="CircleShape2D" id="CircleShape2D_018hk"]
+radius = 35.0571
 
 [sub_resource type="Animation" id="Animation_ulon1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("Pivot/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -75,7 +33,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("Pivot/Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -87,7 +45,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/path = NodePath("Pivot/Sprite2D:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -99,7 +57,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/path = NodePath("Pivot/Sprite2D:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -107,6 +65,47 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0174533, 0.00581776, -0.00581777, -0.0174533, -0.0116355, -0.00581776, -0.00290888, 0.0, 0.0, 0.0268772, 0.0237359, 0.0205946, 0.0174533, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_td7dc"]
+resource_name = "player_walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_v43sd"), ExtResource("3_eg7yy"), ExtResource("2_v43sd"), ExtResource("3_eg7yy"), ExtResource("2_v43sd")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.10472, 0.10472, -0.10472, 0.10472, -0.10472]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xs037"]
@@ -120,14 +119,17 @@ _data = {
 collision_mask = 3
 script = ExtResource("1_8oivm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2(0, -67)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+unique_name_in_owner = true
+rotation = -0.10472
 scale = Vector2(0.0841596, 0.0877973)
 texture = ExtResource("2_v43sd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-11, 0)
-shape = SubResource("CapsuleShape2D_y3ywy")
+shape = SubResource("CircleShape2D_018hk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

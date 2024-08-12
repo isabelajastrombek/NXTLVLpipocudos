@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dlbw5vhwoj4gq" path="res://scenes_and_controllers/player.tscn" id="1_q3mt0"]
 [ext_resource type="Script" path="res://scenes_and_controllers/main_scene_controller.gd" id="1_rrb5v"]
-[ext_resource type="PackedScene" uid="uid://c6e1fogded7x6" path="res://scenes_and_controllers/screens/example_screen.tscn" id="2_s41xh"]
+[ext_resource type="PackedScene" uid="uid://ui6esxic7ek1" path="res://scenes_and_controllers/screens/entrance_screen.tscn" id="2_3lqx7"]
 [ext_resource type="PackedScene" uid="uid://dwxwhmy553y4p" path="res://views/inventory.tscn" id="3_al15w"]
 [ext_resource type="PackedScene" uid="uid://dakakgyr7ydfa" path="res://views/to_do_list.tscn" id="5_7nvcv"]
 
@@ -12,16 +12,16 @@ script = ExtResource("1_rrb5v")
 [node name="Screens" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="ExampleScreen" parent="Screens" instance=ExtResource("2_s41xh")]
+[node name="EntranceScreen" parent="Screens" instance=ExtResource("2_3lqx7")]
 width = 1152
 
 [node name="Player" parent="." instance=ExtResource("1_q3mt0")]
 unique_name_in_owner = true
-position = Vector2(334, 180)
+position = Vector2(202, 461)
+scale = Vector2(2, 2)
 
 [node name="Camera" type="Camera2D" parent="Player"]
 unique_name_in_owner = true
-position = Vector2(-334, -180)
 limit_left = 0
 limit_top = 0
 limit_bottom = 648
